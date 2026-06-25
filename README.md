@@ -105,3 +105,44 @@ The quiz may be initiated through any of the following user inputs: Start quiz, 
 4.6 Interface Elements
 
 The assessment is rendered within a dedicated panel or child window, displaying the question number, question text, response controls, a running score, and progress indication. Correct and incorrect responses are differentiated through colour-coded feedback. Upon completion, a summary screen displays the final score together with an option to restart the assessment.
+
+## Module 3: Natural Language Processing Simulation
+
+5.1 Purpose
+
+This module enables the chatbot to recognise semantically equivalent requests expressed through varied phrasing, thereby improving the robustness and perceived naturalness of the conversational interface.
+
+5.2 Methodology
+
+Rather than employing a formal natural language processing library, this module simulates basic intent recognition through case-insensitive substring matching, implemented using the string.Contains() method in C#. User input is evaluated against a predefined set of keyword groups, each associated with a corresponding system action:
+
+Keyword GroupRepresentative TriggersResulting ActionTask"add task", "new task", "create task"Initiates the task-creation workflowReminder"remind me", "set a reminder", "remember to"Initiates the reminder-setting workflowQuiz"quiz", "test me", "quiz me"Initiates the knowledge assessmentPassword"password", "update password"Provides password security guidancePhishing"phishing", "suspicious email"Provides an explanation of phishing and associated mitigationsActivity Log"show log", "what have you done"Displays the activity logHelp"help", "what can you do"Displays the list of available commands
+
+5.3 Illustrative Interaction
+
+User:    "Remind me to update my password tomorrow."
+Chatbot: "Reminder set for 'Update my password' on tomorrow's date."
+
+User:    "Add a task to enable two-factor authentication."
+Chatbot: "Task added: 'Enable two-factor authentication.' Would you like
+         to set a reminder for this task?"
+
+User:    "What have you done for me?"
+Chatbot: "Here's a summary of recent actions:
+         1. Reminder set for 'Update my password' tomorrow.
+         2. Task added: 'Enable two-factor authentication' (no reminder set)."
+
+5.4 Fallback Handling
+
+Where no keyword group is matched, the system returns a default clarification request:
+
+
+"I didn't quite understand that. Could you try rephrasing? You can type 'help' to see what I can do."
+
+
+
+The frequency of this fallback response is minimised through the inclusion of multiple representative phrasings within each keyword group.
+
+5.5 Interface Elements
+
+As this module operates at the level of input interpretation rather than presentation, no dedicated interface component is required. All resulting responses are rendered within the existing chat message area, consistent with the established conversational style of the application.
