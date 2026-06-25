@@ -62,3 +62,38 @@ CommandResulting ActionAdd task - [title]Creates a new task recordShow tasks / V
 3.6 Interface Elements
 
 The task assistant is presented as a dedicated panel within the main application window, comprising a styled list of task records and three control buttons — Add Task, Mark Complete, and Delete Task — styled consistently with the application's visual theme.
+
+## Cybersecurity Knowledge Assessment (Quiz)
+
+4.1 Purpose
+
+This module reinforces the user's cybersecurity literacy through an interactive, scored assessment, providing immediate corrective feedback for each response.
+
+4.2 Functional Description
+
+A bank of more than ten questions is maintained in-memory as a List<QuizQuestion> object; no database persistence is required for this module. Questions are presented individually, in either multiple-choice or true/false format, and span the following subject areas:
+
+
+Phishing
+Password security
+Safe browsing practices
+Social engineering
+Two-factor authentication
+Ransomware
+
+
+Following each response, the system indicates whether the answer was correct and provides a concise explanatory note reinforcing the underlying concept. Upon completion of the assessment, a cumulative score is presented alongside a corresponding evaluative message.
+
+4.3 Illustrative Question
+
+Question: What should you do if you receive an email asking for your password?
+A) Reply with your password
+B) Delete the email
+C) Report the email as phishing
+D) Ignore it
+
+Chatbot: Correct! Reporting phishing emails helps prevent scams.
+
+4.4 Scoring Criteria
+
+Score RangeFeedback Message10–12 correct"Great job! You're a cybersecurity pro!"6–9 correct"Good effort! Keep practising to stay safe online."0–5 correct"Keep learning to stay safe online!"
