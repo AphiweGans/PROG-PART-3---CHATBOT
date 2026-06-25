@@ -17,3 +17,21 @@ Visual Studio 2022 or later, configured with the .NET Desktop Development worklo
 .NET 6 (or a later compatible runtime)
 A local or remote instance of MySQL Server
 The MySql.Data NuGet package, referenced within the project
+
+## Module 1: Task Assistant with Reminders
+
+3.1 Purpose
+
+The task assistant module enables users to create, monitor, and manage cybersecurity-related tasks (for example, "Enable two-factor authentication") within the conversational interface. All task records are persisted in a relational database to ensure continuity between sessions.
+
+3.2 Functional Description
+
+Users initiate task creation through natural-language commands such as:
+
+
+Add task - Review privacy settings
+New task - Update my passwords
+
+
+Upon receipt of such a command, the chatbot confirms the action, prompts the user to specify an optional reminder, and commits the resulting record to the tasks table. Subsequent commands permit the user to retrieve, complete, or delete existing tasks, with each operation reflected immediately in the underlying database.
+
