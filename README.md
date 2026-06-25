@@ -146,3 +146,32 @@ The frequency of this fallback response is minimised through the inclusion of mu
 5.5 Interface Elements
 
 As this module operates at the level of input interpretation rather than presentation, no dedicated interface component is required. All resulting responses are rendered within the existing chat message area, consistent with the established conversational style of the application.
+
+## Module 4: Activity Logging
+
+6.1 Purpose
+
+The activity logging module maintains a chronological record of all significant actions performed by the chatbot during a session, supporting transparency and enabling the user to review prior interactions on request.
+
+6.2 Functional Description
+
+Each significant event is recorded as an instance of an ActivityLogEntry object, comprising an action description and a timestamp, and appended to an in-memory List<ActivityLogEntry>. The five categories of logged events are summarised below.
+
+CategoryRepresentative Log EntryTask creation"Task added: 'Enable two-factor authentication' (Reminder set for 5 days from now)."Task completion"Task completed: 'Review privacy settings'."Task deletion"Task deleted: 'Update my passwords'."Reminder creation"Reminder set: 'Review privacy settings' on [date]."Quiz commencement"Quiz started."Quiz completion"Quiz completed — Score: 8 out of 12."NLP-derived action"NLP detected: 'add task' from user input 'Can you add a task for me?'."Sentiment change"Sentiment detected: Worried."
+
+6.3 Retrieving the Log
+
+The activity log may be retrieved through any of the following user inputs: Show activity log, What have you done for me?, Show log, Recent actions. By default, the system displays the five to ten most recent entries, in the interest of conciseness.
+
+6.4 Illustrative Interaction
+
+User:    "Show activity log."
+Chatbot: "Here's a summary of recent actions:
+         1. Task added: 'Enable two-factor authentication' (Reminder set
+            for 5 days from now).
+         2. Quiz started - 5 questions answered.
+         3. Reminder set: 'Review privacy settings' on [specific date]."
+
+6.5 Interface Elements
+
+The activity log is presented in a dedicated, scrollable panel within the main application window. Each entry displays a muted timestamp alongside its corresponding action description. A Clear Log control is provided to reset the displayed history.
