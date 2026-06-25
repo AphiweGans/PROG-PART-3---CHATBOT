@@ -97,3 +97,11 @@ Chatbot: Correct! Reporting phishing emails helps prevent scams.
 4.4 Scoring Criteria
 
 Score RangeFeedback Message10–12 correct"Great job! You're a cybersecurity pro!"6–9 correct"Good effort! Keep practising to stay safe online."0–5 correct"Keep learning to stay safe online!"
+
+## Initiating the Assessment
+
+The quiz may be initiated through any of the following user inputs: Start quiz, Play quiz, Quiz me, Test my knowledge.
+
+4.6 Interface Elements
+
+The assessment is rendered within a dedicated panel or child window, displaying the question number, question text, response controls, a running score, and progress indication. Correct and incorrect responses are differentiated through colour-coded feedback. Upon completion, a summary screen displays the final score together with an option to restart the assessment.
