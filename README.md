@@ -35,3 +35,30 @@ New task - Update my passwords
 
 Upon receipt of such a command, the chatbot confirms the action, prompts the user to specify an optional reminder, and commits the resulting record to the tasks table. Subsequent commands permit the user to retrieve, complete, or delete existing tasks, with each operation reflected immediately in the underlying database.
 
+## Database Schema
+
+sqlCREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    reminder_date DATE,
+    reminder_timeframe VARCHAR(100),
+    is_completed BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+3.4 Illustrative Interaction
+
+User:    Add task - Review privacy settings
+Chatbot: Task added with the description "Review account privacy settings to
+         ensure your data is protected." Would you like a reminder?
+User:    Yes, remind me in 3 days.
+Chatbot: Got it! I'll remind you in 3 days.
+
+3.5 Supported Commands
+
+CommandResulting ActionAdd task - [title]Creates a new task recordShow tasks / View my tasksRetrieves and displays all stored tasks, including title, description, reminder, and completion statusMark task [title] as completeUpdates the corresponding record's completion statusDelete task [title]Removes the corresponding record from the database
+
+3.6 Interface Elements
+
+The task assistant is presented as a dedicated panel within the main application window, comprising a styled list of task records and three control buttons — Add Task, Mark Complete, and Delete Task — styled consistently with the application's visual theme.
