@@ -175,3 +175,7 @@ Chatbot: "Here's a summary of recent actions:
 6.5 Interface Elements
 
 The activity log is presented in a dedicated, scrollable panel within the main application window. Each entry displays a muted timestamp alongside its corresponding action description. A Clear Log control is provided to reset the displayed history.
+
+## Screenshots:
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/658e3f3f-13ee-4bbc-9660-b2be82cb7521" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/380ac4f4-f88e-4778-b04c-d5d6d823d526" />
