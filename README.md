@@ -35,7 +35,7 @@ New task - Update my passwords
 
 Upon receipt of such a command, the chatbot confirms the action, prompts the user to specify an optional reminder, and commits the resulting record to the tasks table. Subsequent commands permit the user to retrieve, complete, or delete existing tasks, with each operation reflected immediately in the underlying database.
 
-## Database Schema
+## Module 2: Database Schema
 
 sqlCREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
